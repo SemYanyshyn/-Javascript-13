@@ -1,0 +1,27 @@
+<!-- ОЧИСТІТЬ ЕЛЕМЕНТ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ol id="elem">
+      <li>Привіт</li>
+      <li>Світ</li>
+    </ol>
+
+    <script>
+      function clear(elem) {
+        let ol = document.getElementById("elem");
+        while (ol.firstChild) {
+          ol.remove(ol.firstChild);
+          i++;
+        }
+      }
+
+      clear(elem); // очищує список
+    </script>
+  </body>
+</html>
