@@ -1,0 +1,45 @@
+<!-- Створіть дерево з об’єкту -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container"></div>
+    <script>
+      let container = document.querySelector(".container");
+      container.innerHTML = `<ul>
+      <li>
+        Риба
+        <ul>
+          <li>Форель</li>
+          <li>Лосось</li>
+        </ul>
+      </li>
+
+      <li>
+        Дерево
+        <ul>
+          <li>
+            Величезні
+            <ul>
+              <li>секвойя</li>
+              <li>дуб</li>
+            </ul>
+          </li>
+          <li>
+            Квітучі
+            <ul>
+              <li>яблуня</li>
+              <li>манголія</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>`;
+    </script>
+  </body>
+</html>
