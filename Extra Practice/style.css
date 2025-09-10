@@ -1,0 +1,17 @@
+.border {
+  border: 2px solid rgb(22, 22, 22);
+}
+
+th {
+  background-color: rgb(181, 208, 232);
+  border: 1px solid rgb(0, 0, 0);
+  font-size: 50px;
+  padding: 15px;
+}
+
+td {
+  border: 1px solid rgb(0, 0, 0);
+  text-align: center;
+  font-size: 50px;
+  background-color: rgb(220, 190, 149);
+}
