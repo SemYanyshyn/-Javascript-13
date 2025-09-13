@@ -1,44 +1,46 @@
-// Велика частина gpt. Не розумів як реалізувати логіку
+// ЮЗАВ GPT бо було важко з логікою 
 function createCalendar(elem, year, month) {
   let table = document.createElement("table");
-  table.className = "border";
 
   let headerTr = document.createElement("tr");
-  let days = ["ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "НД"];
-  days.forEach((element) => {
+
+  let days = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Нд"];
+
+  for (let day of days) {
     let th = document.createElement("th");
-    th.textContent = element;
+    th.textContent = day;
     headerTr.append(th);
-  });
-  table.append(headerTr);
-
-  let d = new Date(year, month - 1);
-  let startDay = (d.getDay() + 6) % 7; 
-
-  let dayTr = document.createElement("tr");
-  for (let i = 0; i < startDay; i++) {
-    let emptyTd = document.createElement("td");
-    dayTr.append(emptyTd);
   }
 
+  table.append(headerTr);
+
   let daysInMonth = new Date(year, month, 0).getDate();
+  let firstDay = new Date(year, month - 1, 1).getDay();
+  firstDay = (firstDay + 6) % 7;
 
-  for (let i = 0; i < daysInMonth; i++) {
-    let day = i + 1;
-    let dayTd = document.createElement("td");
-    dayTd.textContent = day;
-    dayTr.append(dayTd);
+  let mainTr = document.createElement("tr");
 
-    if ((startDay + i + 1) % 7 === 0) {
-      table.append(dayTr);
-      dayTr = document.createElement("tr");
+  for (let i = 1; i <= firstDay; i++) {
+    mainTr.append(document.createElement("td"));
+  }
+
+  for (let i = 1; i <= daysInMonth; i++) {
+    let td = document.createElement("td");
+    td.textContent = i;
+    mainTr.append(td);
+
+    if ((firstDay + i) % 7 === 0) {
+      table.append(mainTr);
+      mainTr = document.createElement("tr");
     }
   }
 
-  if (dayTr.children.length > 0) {
-    table.append(dayTr);
+  if (mainTr.children.length > 0) {
+    table.append(mainTr);
   }
 
   elem.append(table);
 }
-createCalendar(document.getElementById("calendar"), 2012, 9);
+
+let id = document.getElementById("calendar");
+createCalendar(id, 2012, 9);
