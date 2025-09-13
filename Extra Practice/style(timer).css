@@ -1,0 +1,20 @@
+#clock {
+  font-size: 70px;
+}
+
+.start,
+.stop {
+  font-size: 45px;
+}
+
+.hours {
+  color: rgb(255, 0, 0);
+}
+
+.minutes {
+  color: green;
+}
+
+.sec {
+  color: blue;
+}
