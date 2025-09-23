@@ -1,0 +1,16 @@
+#field {
+  width: 400px;
+  height: 400px;
+  background: #00ff00;
+  border: 8px solid #545454;
+  outline: 10px solid rgb(0, 0, 0);
+  background-image: radial-gradient(black 2px, transparent 2px);
+  background-size: 40px 40px;
+  position: relative;
+}
+
+.ball img {
+  width: 60px;
+  height: auto;
+  position: absolute;
+}
