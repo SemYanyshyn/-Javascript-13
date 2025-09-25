@@ -16,12 +16,11 @@
       function clear(elem) {
         let ol = document.getElementById("elem");
         while (ol.firstChild) {
-          ol.remove(ol.firstChild);
-          i++;
+          ol.removeChild(ol.firstChild);
         }
       }
 
-      clear(elem); // очищує список
+      clear();
     </script>
   </body>
 </html>
